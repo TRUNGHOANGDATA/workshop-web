@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Clock } from "lucide-react";
-import { PRICE } from "./RegistrationForm";
+import { PRICE, ALLOW_REGISTRATION } from "./RegistrationForm";
 
 export default function Hero() {
     const scrollToRegister = () => {
@@ -81,12 +81,21 @@ export default function Hero() {
                         </div>
 
                         <div className="mt-6 flex flex-col sm:flex-row gap-5 items-center">
-                            <button
-                                onClick={scrollToRegister}
-                                className="w-full sm:w-auto px-8 py-4 bg-brand-accent hover:bg-amber-400 text-brand-navy font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] hover:-translate-y-1 transform duration-300"
-                            >
-                                Đăng Ký Tham Gia {PRICE === 0 ? "(Miễn phí)" : `(${PRICE.toLocaleString('vi-VN')} đ)`}
-                            </button>
+                            {ALLOW_REGISTRATION ? (
+                                <button
+                                    onClick={scrollToRegister}
+                                    className="w-full sm:w-auto px-8 py-4 bg-brand-accent hover:bg-amber-400 text-brand-navy font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] hover:-translate-y-1 transform duration-300"
+                                >
+                                    Đăng Ký Tham Gia {PRICE === 0 ? "(Miễn phí)" : `(${PRICE.toLocaleString('vi-VN')} đ)`}
+                                </button>
+                            ) : (
+                                <a
+                                    href="mailto:info@erx.vn"
+                                    className="w-full sm:w-auto text-center px-8 py-4 bg-brand-accent hover:bg-amber-400 text-brand-navy font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] hover:-translate-y-1 transform duration-300"
+                                >
+                                    Liên Hệ: info@erx.vn
+                                </a>
+                            )}
                             <a href="#agenda" className="text-brand-text hover:text-white font-medium px-4 py-2 transition-colors inline-flex items-center gap-2 whitespace-nowrap">
                                 Xem Nội Dung Chi Tiết <span className="text-brand-accent">→</span>
                             </a>

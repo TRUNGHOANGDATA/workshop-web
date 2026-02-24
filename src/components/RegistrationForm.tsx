@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // ==================== CẤU HÌNH THANH TOÁN ====================
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzCRdsFFZxfMw4ttsFIPL-DYTGWDcnqBcjJvfutQ7_5zhXeUB9jt5BvwsV8qFhVgbyiFw/exec";
 
+export const ALLOW_REGISTRATION: boolean = false; // false = Chỉ hiển thị nút liên hệ info@erx.vn, true = Hiển thị form đăng ký
 export const PRICE: number = 0;          // 0 = Miễn phí, > 0 = có phí (VNĐ)
 const MAX_ATTENDEES = 20;          // Giới hạn số lượng đăng ký
 
@@ -150,7 +151,7 @@ export default function RegistrationForm() {
                             <p className="text-brand-slate text-lg">
                                 Giữ chỗ ngay hôm nay. Phí tham dự: <span className="text-brand-accent font-bold">{PRICE === 0 ? "Miễn Phí" : `${PRICE.toLocaleString('vi-VN')} VNĐ`}</span>.
                             </p>
-                            {currentCount !== null && (
+                            {currentCount !== null && ALLOW_REGISTRATION && (
                                 <div className="mt-3 flex items-center justify-center gap-2 text-sm text-brand-slate/80 bg-brand-navy/30 w-fit mx-auto px-4 py-1.5 rounded-full border border-white/5">
                                     <Users className="w-4 h-4" />
                                     <span>Đã đăng ký: <strong>{currentCount}</strong> / {MAX_ATTENDEES} người</span>
@@ -158,7 +159,28 @@ export default function RegistrationForm() {
                             )}
                         </div>
 
-                        {isFull ? (
+                        {!ALLOW_REGISTRATION ? (
+                            <motion.div
+                                initial={{ scale: 0.8, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                className="flex flex-col items-center justify-center py-12 text-center"
+                            >
+                                <div className="w-20 h-20 rounded-full bg-brand-accent/20 flex items-center justify-center mb-6">
+                                    <Send className="w-10 h-10 text-brand-accent" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-white mb-4">Liên Hệ Đăng Ký</h3>
+                                <p className="text-brand-slate max-w-md mb-8">
+                                    Sự kiện này hiện chưa mở form đăng ký trực tuyến. Vui lòng liên hệ trực tiếp với chúng tôi qua email để được hỗ trợ tham gia và nhận thông tin chi tiết.
+                                </p>
+                                <a
+                                    href="mailto:info@erx.vn"
+                                    className="px-8 py-4 bg-brand-accent hover:bg-amber-400 text-brand-navy font-bold rounded-xl transition-all shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.5)] text-lg inline-flex items-center gap-2"
+                                >
+                                    <Send className="w-5 h-5" />
+                                    Liên Hệ: info@erx.vn
+                                </a>
+                            </motion.div>
+                        ) : isFull ? (
                             <motion.div
                                 initial={{ scale: 0.8, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
