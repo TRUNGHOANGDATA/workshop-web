@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzCRdsFFZxfMw4ttsFIPL-DYTGWDcnqBcjJvfutQ7_5zhXeUB9jt5BvwsV8qFhVgbyiFw/exec";
 
 export const PRICE: number = 0;          // 0 = Miễn phí, > 0 = có phí (VNĐ)
-const MAX_ATTENDEES = 100;          // Giới hạn số lượng đăng ký
+const MAX_ATTENDEES = 20;          // Giới hạn số lượng đăng ký
 
 // Cấu hình ngân hàng cho QR Thanh toán (chỉ dùng khi PRICE > 0)
 const BANK_ID = "970407";           // Mã ngân hàng (VCB = 970436, MB = 970422, TCB = 970407...)
