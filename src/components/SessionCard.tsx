@@ -10,6 +10,7 @@ interface SessionCardProps {
     speakerName: string;
     speakerRole: string;
     speakerAvatarPlaceholder: string; // initial
+    speakerImage?: string; // Tùy chọn truyền link ảnh (ví dụ: "/speaker-1.jpg")
     description: string;
     agendaItems: string[];
     isReversed?: boolean;
@@ -22,6 +23,7 @@ export default function SessionCard({
     speakerName,
     speakerRole,
     speakerAvatarPlaceholder,
+    speakerImage,
     description,
     agendaItems,
     isReversed = false
@@ -78,10 +80,13 @@ export default function SessionCard({
 
                             <div className="relative z-10 flex flex-col items-center text-center">
                                 <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-brand-accent/50 mb-6 bg-brand-lighter flex items-center justify-center group-hover:scale-105 transition-transform duration-500 shadow-xl">
-                                    {/* Tương lai người dùng sẽ thay bằng thẻ Image của Next.js, ở đây dùng placeholder */}
-                                    <span className="text-5xl font-bold text-brand-slate/50 font-serif">
-                                        {speakerAvatarPlaceholder}
-                                    </span>
+                                    {speakerImage ? (
+                                        <img src={speakerImage} alt={speakerName} className="w-full h-full object-cover" />
+                                    ) : (
+                                        <span className="text-5xl font-bold text-brand-slate/50 font-serif">
+                                            {speakerAvatarPlaceholder}
+                                        </span>
+                                    )}
                                 </div>
 
                                 <div className="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">

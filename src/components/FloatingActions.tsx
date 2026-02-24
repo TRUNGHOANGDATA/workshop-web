@@ -30,7 +30,7 @@ export default function FloatingActions() {
         <div className="fixed bottom-6 right-6 z-[100] flex flex-col gap-3">
             {/* Zalo */}
             <a
-                href="https://zalo.me/0902403666"
+                href="https://zalo.me/231855364228509068"
                 target="_blank"
                 rel="noreferrer"
                 className="w-12 h-12 flex items-center justify-center rounded-full bg-[#0068FF] shadow-lg hover:bg-blue-600 transition-transform hover:scale-110"

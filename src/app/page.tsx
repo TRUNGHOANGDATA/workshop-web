@@ -21,13 +21,13 @@ export default function Home() {
           speakerName="Hoàng Trung"
           speakerRole="Chuyên gia đào tạo Phân tích dữ liệu & AI Automation"
           speakerAvatarPlaceholder="H"
+          speakerImage="/hoang-trung.jpg"
           description="Khám phá Antigravity IDE - môi trường phát triển (IDE) dựa trên VS Code, tích hợp AI Agents tự hành có khả năng lập kế hoạch, viết code, kiểm thử và triển khai với các model như Gemini 3.1 Pro và Claude 4.6 Sonnet."
           agendaItems={[
             "Điều kiện kiên quyết & Yêu cầu phần cứng",
             "Tải xuống & Cài đặt Antigravity IDE",
             "Thiết lập lần đầu tiên & Giao diện IDE (Editor View vs Manager View)",
             "Cấu hình Agent: Chế độ phát triển (Auto, Turbo, Off)",
-            "Cấu hình Nâng cao: Extensions, MCP tools, Skills & Workflows",
             "Live Demo & Thực hành: Xây dựng mini-project với AI Agents"
           ]}
           isReversed={false}
