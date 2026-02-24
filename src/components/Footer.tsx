@@ -17,8 +17,9 @@ export default function Footer() {
                 </p>
 
                 <div className="flex items-center gap-6">
-                    <a href="#" className="text-brand-slate hover:text-white transition-colors text-sm">Privacy Policy</a>
-                    <a href="#" className="text-brand-slate hover:text-white transition-colors text-sm">Terms of Service</a>
+                    <a href="https://khoahoc.erx.vn/" target="_blank" rel="noopener noreferrer" className="text-brand-slate hover:text-white transition-colors text-sm font-medium hover:text-brand-accent">
+                        Khoá học E learning
+                    </a>
                 </div>
             </div>
         </footer>
