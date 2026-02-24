@@ -32,7 +32,7 @@ export default function Navbar() {
             <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <a href="#" className="flex items-center gap-2">
+                        <a href="https://khoahoc.erx.vn/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                             <div className="w-10 h-10 relative bg-white rounded flex items-center justify-center overflow-hidden p-1 shadow">
                                 <Image src="/ERX_LOGO.png" alt="ERX Logo" width={32} height={32} className="object-contain" priority />
                             </div>
