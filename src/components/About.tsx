@@ -41,9 +41,9 @@ export default function About() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.2 }}
-                            className="glass-panel p-8 rounded-2xl flex flex-col hover:-translate-y-2 transition-transform duration-300"
+                            className="glass-panel p-8 rounded-2xl flex flex-col hover:-translate-y-3 transition-all duration-500 hover:border-brand-accent/40 hover:shadow-[0_10px_40px_rgba(245,158,11,0.15)] group"
                         >
-                            <div className="w-14 h-14 rounded-xl bg-brand-navy border border-white/5 flex items-center justify-center mb-6 shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
+                            <div className="w-14 h-14 rounded-xl bg-brand-navy border border-white/5 flex items-center justify-center mb-6 shadow-[0_4px_10px_rgba(0,0,0,0.5)] group-hover:bg-brand-accent/10 group-hover:border-brand-accent/30 transition-all duration-500">
                                 {b.icon}
                             </div>
                             <h4 className="text-xl font-bold text-white mb-3">{b.title}</h4>

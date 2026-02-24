@@ -72,11 +72,12 @@ export default function SessionCard({
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.5, delay: 0.2 }}
+                        whileHover={{ y: -10 }}
                         className="w-full max-w-sm"
                     >
-                        <div className="glass-panel p-8 rounded-2xl relative overflow-hidden group">
+                        <div className="glass-panel p-8 rounded-2xl relative overflow-hidden group hover:border-brand-accent/40 transition-all duration-500 hover:shadow-[0_0_40px_rgba(245,158,11,0.15)]">
                             {/* Decorative accent */}
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 rounded-full blur-[50px] -translate-y-1/2 translate-x-1/2"></div>
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 rounded-full blur-[50px] -translate-y-1/2 translate-x-1/2 group-hover:bg-brand-accent/30 transition-colors duration-500"></div>
 
                             <div className="relative z-10 flex flex-col items-center text-center">
                                 <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-brand-accent/50 mb-6 bg-brand-lighter flex items-center justify-center group-hover:scale-105 transition-transform duration-500 shadow-xl">

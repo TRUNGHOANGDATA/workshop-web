@@ -11,10 +11,16 @@ export default function Hero() {
 
     return (
         <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-32 pb-12 lg:pt-32">
-            {/* Background gradients */}
+            {/* Animated Background blobs */}
             <div className="absolute inset-0 bg-brand-navy z-0"></div>
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-accent/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 z-0"></div>
-            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4 z-0"></div>
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-accent/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 z-0 animate-blob"></div>
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4 z-0 animate-blob animation-delay-2000"></div>
+            <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-purple-500/15 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 z-0 animate-blob animation-delay-4000"></div>
+
+            {/* Floating decorative elements */}
+            <motion.div animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }} className="absolute top-32 left-12 w-8 h-8 rounded border border-brand-accent/30 hidden md:block z-0"></motion.div>
+            <motion.div animate={{ y: [0, 25, 0], rotate: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 7, ease: "easeInOut" }} className="absolute bottom-32 right-12 w-12 h-12 rounded-full border border-blue-500/30 hidden md:block z-0"></motion.div>
+
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10 w-full max-w-7xl">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
